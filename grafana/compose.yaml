@@ -29,7 +29,7 @@ services:
     environment:
       - UP_INFLUXDB_DISABLE="true"
       - UP_POLLER_DEBUG=false
-      - UP_UNIFI_DYNAMIC="false"
+      - UP_UNIFI_DYNAMIC=false
       - UP_PROMETHEUS_HTTP_LISTEN=0.0.0.0:9130
       - UP_PROMETHEUS_NAMESPACE=unpoller
       - UP_UNIFI_CONTROLLER_0_PASS=${UP_UNIFI_CONTROLLER_0_PASS}
