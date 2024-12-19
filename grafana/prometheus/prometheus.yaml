@@ -33,4 +33,4 @@ scrape_configs:
       - targets: ['192.168.2.1:9100']
   - job_name: 'cadvisor'
     static_configs:
-      - targets: ['192.168.2.1:8080']
+      - targets: ['192.168.2.1:9101']
