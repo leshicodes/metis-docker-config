@@ -21,7 +21,7 @@ services:
     # networks:
     #   - monitoring
   unpoller:
-    image: ghcr.io/unpoller/unpoller:latest
+    image: ghcr.io/unpoller/unpoller:${UNPOLLER_IMAGE_TAG}
     restart: unless-stopped
     ports:
       - '9130:9130'
@@ -42,7 +42,7 @@ services:
       - UP_UNIFI_CONTROLLER_0_URL=${UP_UNIFI_CONTROLLER_0_URL}
       - UP_UNIFI_CONTROLLER_0_USER=${UP_UNIFI_CONTROLLER_0_USER}
   prometheus:
-    image: prom/prometheus
+    image: prom/prometheus:${PROMETHEUS_IMAGE_TAG}
     container_name: prometheus
     command:
       - '--config.file=/etc/prometheus/prometheus.yaml'
@@ -59,7 +59,7 @@ services:
       # NOTE: you may need to use host-gateway instead of node-exporter -- some versions of linux require this small change
       - host.docker.internal:host-gateway
   grafana:
-    image: grafana/grafana
+    image: grafana/grafana:${GRAFANA_IMAGE_TAG}
     container_name: grafana
     ports:
       - 3000:3000
