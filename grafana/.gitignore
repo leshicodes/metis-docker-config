@@ -1,3 +1,4 @@
 grafana.env
 *.crt
 *.key
+grafana.ini
