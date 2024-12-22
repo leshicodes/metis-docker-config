@@ -73,6 +73,7 @@ services:
       - grafana_data:/var/lib/grafana
       - ./grafana/certs/grafana.crt:/etc/grafana/grafana.crt
       - ./grafana/certs/grafana.key:/etc/grafana/grafana.key
+      - ./temp:/var/tempa/
 volumes:
   prom_data:
   grafana_data:
