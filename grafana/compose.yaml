@@ -74,6 +74,13 @@ services:
       - ./grafana/certs/grafana.crt:/etc/grafana/grafana.crt
       - ./grafana/certs/grafana.key:/etc/grafana/grafana.key
       - ./grafana/conf/grafana.ini:/etc/grafana/grafana.ini
+  loki:
+    image: grafana/loki:${LOKI_IMAGE_TAG}
+    ports:
+      - 3100:3100
+    command: -config.file=/etc/loki/local-config.yaml
+    volumes:
+      - ./loki/local-config.yaml:/etc/loki/local-config.yaml
 volumes:
   prom_data:
   grafana_data:
