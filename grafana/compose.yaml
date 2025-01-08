@@ -81,8 +81,8 @@ services:
     ports:
       - 3100:3100
     command: -config.file=/etc/loki/local-config.yaml
-    volumes:
-      - ./loki/conf:/etc/loki
+    # volumes:
+    #   - ./loki/conf:/etc/loki
 volumes:
   prom_data:
   grafana_data:
